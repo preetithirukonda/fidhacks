@@ -1,0 +1,70 @@
+/*main color: rgb(115,89,182)
+secondary color: rgb(164,145,211)*/
+body {
+    background-color: rgb(174, 157, 214);
+    font-family: 'Gadugi',sans-serif;
+  }
+  
+  h1 {
+    color: rgb(115,89,182);
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Gadugi',sans-serif;
+  }
+  h3 {
+    color: rgb(115,89,182);
+    text-align: center;
+  }
+  
+  p {
+    color:rgb(89, 54, 177);
+    font-size: 14px;
+  }
+
+  input[type=text] {
+    
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+   
+  }
+
+  label{
+    color: rgb(89, 54, 177);
+    font-size: 14px;
+  }
+  
+
+  .collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .image-container {
+    margin: 10px;
+    overflow: hidden;
+    
+  }
+ 
+  .image-container:hover img {
+    transform: scale(1.1);
+    transition: transform 1s;
+  }
+
+  ul{
+    color: rgb(89, 54, 177);
+  }
+
+  .footer{
+    text-align: center;
+  }
+
+  .landing-section-one{
+    background-color: white ;
+    padding: 3%;
+  }
+  .landing-section-two{
+    background-color: rgb(164,145,211);
+    padding: 3%;
+  }
