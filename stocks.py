@@ -44,7 +44,21 @@ while True:
             stocksPurchased.append(ticker)
             stocksPurchasedValues.append(quantity)
     elif option == "2":
-        print()
+        ticker = input("Enter the TICKER of the stock you want to sell: ")
+        if ticker not in stocksPurchased:
+            print("You have not purchased that stock.")
+            continue
+        quantity = int(input("Number of Stocks to Sell [Enter 0 if you no longer want to make the trade]: "))
+        for i in range(len(stocksPurchased)):
+            if ticker == stocksPurchased[i]:
+                if quantity > stocksPurchasedValues[i]:
+                    print("You are trying to sell more stocks than you possess.")
+                    continue
+                stocksPurchasedValues[i] -= quantity
+                response = requests.get("https://api.tiingo.com/tiingo/daily/" + ticker + "/prices?token=cfc471e20e736fc030042c46647b273fbe0ad56b", headers=headers)
+                price = response.json()[0]["close"]
+                print("The current price of " + ticker + " is " + str(price))
+                balance = balance + (price * quantity)        
     elif option == "3":
         totalValue = 0
         for i in range(len(stocksPurchased)):
