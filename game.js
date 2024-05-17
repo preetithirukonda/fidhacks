@@ -41,7 +41,7 @@ function eighteen(){
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
         <p>You are about to graduate high school. It's time to decide where you will go to college.</p>
-        <a href="quiz.html" class="btn" target="_blank">Before going to college, take this quiz to learn about budgeting</a>
+        <a href="quiz/quiz.html" class="btn" target="_blank">Before going to college, take this quiz to learn about budgeting</a>
         <a href="#" class="btn" onclick="gotocollege()">Click here when you pass the quiz to college.</a>
     </div>
 `;
@@ -69,7 +69,7 @@ function community(){
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
-    <a href="collegequiz.html" class="btn" target="_blank">Now that you are in college, take this quiz about paying for college.</a>
+    <a href="quiz/collegequiz.html" class="btn" target="_blank">Now that you are in college, take this quiz about paying for college.</a>
     <a href="#" class="btn" onclick="graduate()">Click here when you pass the quiz to graduate and get a job.</a>
     </div>
 `;
@@ -91,7 +91,7 @@ function instate() {
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
-    <a href="collegequiz.html" class="btn" target="_blank">Now that you are in college, take this quiz about paying for college.</a>
+    <a href="quiz/collegequiz.html" class="btn" target="_blank">Now that you are in college, take this quiz about paying for college.</a>
     <a href="#" class="btn" onclick="graduate()">Click here when you pass the quiz to graduate and get a job.</a>
     </div>
 `;
@@ -103,7 +103,7 @@ function privateschool () {
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
-    <a href="collegequiz.html" class="btn" target="_blank">Now that you are in college, take this quiz about paying for college.</a>
+    <a href="quiz/collegequiz.html" class="btn" target="_blank">Now that you are in college, take this quiz about paying for college.</a>
     <a href="#" class="btn" onclick="graduate()">Click here when you pass the quiz to graduate and get a job.</a>
     </div>
 `;
@@ -113,16 +113,8 @@ function chap2housing() {
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
-    <a href="housingquiz.html" class="btn" target="_blank">It's time to buy a home! Before you do, take this quiz on housing finances.</a>
+    <a href="quiz/housingquiz.html" class="btn" target="_blank">It's time to buy a home! Before you do, take this quiz on housing finances.</a>
     <a href="#" class="btn" onclick="selecthome()">Click here when you pass the quiz to select a home.</a>
-
-        <h1>Make a decision:</h1>
-        <p> Buy an apartment: $800</p>
-        <p> Buy a house: $5000 </p>
-        <p> Buy a penthouse: $9000</p>
-        <a href="#" class="btn" onclick="apartment()">Apartment</a>
-        <a href="#" class="btn" onclick="house()">House</a>
-        <a href="#" class="btn" onclick="penthouse()">Penthouse</a>
     </div>
 `;
 }
@@ -178,7 +170,8 @@ function penthouse() {
 function yearslater() {
     document.body.innerHTML = `
     <div class="container">
-    <a href="retirementquiz.html" class="btn" target="_blank">It's time to retire. Take this quiz before retirement.</a>
+    <p>Bank Balance: ${bankBalance}</p>
+    <a href="quiz/retirementquiz.html" class="btn" target="_blank">It's time to retire. Take this quiz before retirement.</a>
     <a href="#" class="btn" onclick="retire()">Click here when you pass the quiz to retire.</a>
     </div>
 `;
