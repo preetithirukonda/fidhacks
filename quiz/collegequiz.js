@@ -102,9 +102,7 @@ nextButton.addEventListener("click", () => {
         localStorage.setItem('score', score);
         
         alert("Quiz finished! Your score is: " + score);
-        if(score<4){
-            startQuiz();
-        }
+        startQuiz();
     }
 });
 
