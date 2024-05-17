@@ -20,6 +20,7 @@ def index():
     balance = session['balance']
     stocksPurchased = session['stocksPurchased']
     stocksPurchasedValues = session['stocksPurchasedValues']
+    message = ""
 
     if request.method == 'POST':
       #  message = str(balance) + "\n"
@@ -32,7 +33,7 @@ def index():
              # buying stock
             if 'buy' in request.form:
                 quantity =float(request.form['shares_amt'])
-                message = f"Buying {ticker}"
+                message = message + f"Buying {ticker}"
                 if (balance - (price * quantity) < 0):
                     raise IndexError
                 balance = balance - (price * quantity)
@@ -52,7 +53,24 @@ def index():
              # selling stock
             elif 'sell' in request.form:
                  quantity =float(request.form['shares_amt'])
-                 message = f"Selling {ticker}"
+                 message = message + f"Selling {ticker}"
+                 if ticker not in stocksPurchased:
+                    message = message + "You have not purchased that stock."
+                    raise IndexError
+                 #quantity = int(input("Number of Stocks to Sell [Enter 0 if you no longer want to make the trade]: "))
+                 for i in range(len(stocksPurchased)):
+                    if ticker == stocksPurchased[i]:
+                        if quantity > stocksPurchasedValues[i]:
+                            message = message + "You are trying to sell more stocks than you possess."
+                            raise IndexError
+                        stocksPurchasedValues[i] -= quantity
+                        response = requests.get("https://api.tiingo.com/tiingo/daily/" + ticker + "/prices?token=cfc471e20e736fc030042c46647b273fbe0ad56b", headers=headers)
+                        price = response.json()[0]["close"]
+                        message = message + "The current price of " + ticker + " is " + str(price)
+                        balance = balance + (price * quantity)
+                        message ="Current balance: "+ str(balance) + "\n"
+                        for i in range(len(stocksPurchased)):
+                            message = message + "\n"+ stocksPurchased[i] + ": " + str(stocksPurchasedValues[i]) + "\n"     
             elif 'get-price' in request.form:
                 message ="Current balance: "+ str(balance) + "\n"
                 message = message + f"\nClosing Price for {ticker}: ${price}"
