@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
     var playerName = localStorage.getItem("playerName");
     if (playerName) {
         document.body.innerHTML = `
+        <h5><a href="index.html">Landing</a> | <a href="pfresources.html">Personal Finance Resources</a> | <a
+        href="game.html">Play the Game</a></h5>
+
+        <h1>
+            RiskRise: The Game
+        </h1>
+    <h3>  <a
+        href="file:///Users/preetithirukonda/Documents/GitHub/fidhacks/fidhacks/game.html">Personal Finance </a> | <a href="http://127.0.0.1:5000">Investments</a></h3>
             <div class="container">
                 <h1>Welcome, ${playerName}!</h1>
                 <p>Age: 18</p>
