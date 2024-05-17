@@ -92,21 +92,19 @@ function selectAnswer(isCorrect) {
     nextButton.style.display = 'block';
 }
 
-const fs = require('fs');
+// Replace fs.writeFile with localStorage.setItem
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
-        fs.writeFile('score.txt', score, err => {
-            if(err){
-                console.err;
-                return;
-            }
-        })
+        // Store score in localStorage
+        localStorage.setItem('score', score);
+        
         alert("Quiz finished! Your score is: " + score);
         startQuiz();
     }
 });
+
 
 startQuiz();
