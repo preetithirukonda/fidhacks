@@ -83,7 +83,7 @@ function resetState() {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
 }
-//need to make sure that you are not able to choose until the answer is correct
+
 function selectAnswer(isCorrect) {
     if (isCorrect) {
         score++;
@@ -92,19 +92,12 @@ function selectAnswer(isCorrect) {
     nextButton.style.display = 'block';
 }
 
-const fs = require('fs');
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
         alert("Quiz finished! Your score is: " + score);
-        fs.writeFile('score.txt', score, err => {
-            if(err){
-                console.err;
-                return;
-            }
-        });
         startQuiz();
     }
 });
