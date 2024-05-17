@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Price Lookup</title>
+    <title>investment game</title>
 </head>
 
 <body>
-    <h1>Stock Price Lookup</h1>
+    <h1>investment game</h1>
 
     <form method="post">
         <label for="stock_name">Enter Stock Name:</label><br>
         <input type="text" id="stock_name" name="stock_name"><br>
-        <input type="submit" value="Get Price">
+        <input type="submit" name="get-price" value="Get Price"><br>
+        <input type="text" id="shares_amt" name="shares_amt"><br>
+        <input type="submit" name="buy" value="Buy">
+        <input type="submit" name="sell" value="Sell">
     </form>
 
     {% if message %}
