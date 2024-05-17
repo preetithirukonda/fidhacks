@@ -98,7 +98,9 @@ nextButton.addEventListener("click", () => {
         showQuestion();
     } else {
         alert("Quiz finished! Your score is: " + score);
-        startQuiz();
+        if(score < 4){
+            startQuiz();
+        }
     }
 });
 
