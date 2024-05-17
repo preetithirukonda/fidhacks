@@ -1,5 +1,7 @@
 var bankBalance = 10000;
-var salary = 0;
+var cc_salary = 0;
+var public_salary = 0;
+var private_salary = 0;
 
 function startGame() {
     var playerName = prompt("Enter your character's name:");
@@ -30,6 +32,8 @@ function eighteen(){
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
+        <a>Before going to college, take this quiz to learn about budgeting.</a>
+        
         <h1>Make a decision:</h1>
         <p> Go to community college: $10</p>
         <p> Go to in state public college: $100</p>
@@ -43,9 +47,14 @@ function eighteen(){
 
 function community(){
     bankBalance=bankBalance-10;
+    cc_salary = 2000;
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
+        
+
+        <p>Congrats! You have graduated from college and got your first job! Your salary is: ${cc_salary}</p>
+        <p>Your bank balance is now: ${bankBalance=bankBalance+cc_salary}</p>
         <a href="#" class="btn" onclick="chap2housing()">Click here to choose housing</a>
     </div>
 `;
@@ -53,9 +62,13 @@ function community(){
 
 function instate() {
     bankBalance=bankBalance-100;
+    public_salary = 7000;
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
+
+        <p>Congrats! You have graduated from college and got your first job! Your salary is: ${public_salary}</p>
+        <p>Your bank balance is now: ${bankBalance=bankBalance+public_salary}</p>
         <a href="#" class="btn" onclick="chap2housing()">Click here to choose housing</a>
     </div>
 `;
@@ -63,9 +76,13 @@ function instate() {
 
 function privateschool () {
     bankBalance=bankBalance-1000;
+    private_salary = 7000;
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
+
+        <p>Congrats! You have graduated from college and got your first job! Your salary is: ${private_salary}</p>
+        <p>Your bank balance is now: ${bankBalance=bankBalance+private_salary}</p>
         <a href="#" class="btn" onclick="chap2housing()">Click here to choose housing</a>
     </div>
 `;
@@ -76,9 +93,9 @@ function chap2housing() {
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
         <h1>Make a decision:</h1>
-        <p> Buy an apartment: $80</p>
-        <p> Buy a house: $500 </p>
-        <p> Buy a penthouse: $1000</p>
+        <p> Buy an apartment: $800</p>
+        <p> Buy a house: $5000 </p>
+        <p> Buy a penthouse: $9000</p>
         <a href="#" class="btn" onclick="apartment()">Apartment</a>
         <a href="#" class="btn" onclick="house()">House</a>
         <a href="#" class="btn" onclick="penthouse()">Penthouse</a>
@@ -87,31 +104,43 @@ function chap2housing() {
 }
 
 function apartment() {
-    bankBalance=bankBalance-80;
+    bankBalance=bankBalance-800;
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
-        <a href="#" class="btn" onclick="chap2housing()">Click here to choose housing</a>
+
+        <a href="#" class="btn" onclick="yearslater()">Advance 45 years</a>
     </div>
 `;
 }
 
 function house() {
-    bankBalance=bankBalance-500;
+    bankBalance=bankBalance-5000;
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
-        <a href="#" class="btn" onclick="chap2housing()">Click here to choose housing</a>
+
+        <a href="#" class="btn" onclick="yearslater()">Advance 45 years</a>
     </div>
 `;
 }
 
 function penthouse() {
-    bankBalance=bankBalance-1000;
+    bankBalance=bankBalance-9000;
     document.body.innerHTML = `
     <div class="container">
     <p>Bank Balance: ${bankBalance}</p>
-        <a href="#" class="btn" onclick="chap2housing()">Click here to choose housing</a>
+
+        <a href="#" class="btn" onclick="yearslater()">Advance 45 years</a>
+    </div>
+`;
+}
+
+function yearslater() {
+    document.body.innerHTML = `
+    <div class="container">
+    <p>Your total bank balance is: ${bankBalance}</p>
+    <p>Thank you for playing the game!</p>
     </div>
 `;
 }
