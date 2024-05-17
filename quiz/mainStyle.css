@@ -61,5 +61,6 @@ section h2 {
 }
 
 .quiz-link:hover {
-    background-color: #001e4d;
+    background: #4B64A7;
+    color: #fff;
 }
