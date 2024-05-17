@@ -98,13 +98,13 @@ nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
-        alert("Quiz finished! Your score is: " + score);
         fs.writeFile('score.txt', score, err => {
             if(err){
                 console.err;
                 return;
             }
         })
+        alert("Quiz finished! Your score is: " + score);
         startQuiz();
     }
 });
