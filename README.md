@@ -1,11 +1,11 @@
-RiskRise
-FidHacks 2024 - 2nd place
+# RiskRise
+### FidHacks 2024 - 2nd place
 
 RiskRise was built to solve a problem we’ve all felt: personal finance is intimidating. Between the jargon and the genuine fear of losing money, many people—especially students—stay on the sidelines. We built this to create a low-risk environment where you can learn by doing.
 
 We also wanted to address a massive gap in financial education: the unique hurdles women face. From planning for a longer life expectancy to navigating systemic bias in lending, RiskRise integrates these real-world scenarios into the gameplay.
 
-How it Works
+## How it Works
 You start your "life" at age 18. You customize a character, receive a monthly salary based on your financial standing, and decide how to invest it.
 
 Live Market Data: We integrated the Tiingo API so you’re trading against real-world stock movements.
